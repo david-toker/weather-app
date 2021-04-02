@@ -9,7 +9,14 @@ import FavoriteCityCard from '../../components/favorite-city-card/favorite-city-
 const FavoritesPage = (props) => {
     let favoritesLocal = JSON.parse(localStorage.getItem('favorites_cities'));
 
-    const favoriteList =  favoritesLocal ? favoritesLocal.map(city => <FavoriteCityCard key={city.keyCity} {...city} units={props.units} />): <h1>nothing added yet</h1>
+    const favoriteList = favoritesLocal ? (
+      favoritesLocal.map((city) => (
+        <FavoriteCityCard key={city.keyCity} {...city} units={props.units} />
+      ))
+    ) : (
+      <h1>nothing added yet</h1>
+    );
+    
     return (
         <div>
             <Container>
