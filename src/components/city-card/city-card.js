@@ -70,7 +70,14 @@ class CityCard extends Component {
             alignItems="center"
             spacing={3}>
                 
-                <MainCard city={this.props.city.LocalizedName} country={this.props.city.Country.LocalizedName} keyCity={this.props.city.Key} {...this.props.weatherOfCity} actionWithFavorites={this.onFollowHandler} isFollowed={this.state.isFavorite} />
+                <MainCard
+                    city={this.props.city.LocalizedName}
+                    country={this.props.city.Country.LocalizedName}
+                    keyCity={this.props.city.Key}
+                    {...this.props.weatherOfCity}
+                    actionWithFavorites={this.onFollowHandler}
+                    isFollowed={this.state.isFavorite}
+                />
                 <DetailsCard {...this.props.weatherOfCity} />
                 
             </Grid>
