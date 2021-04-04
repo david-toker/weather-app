@@ -36,39 +36,14 @@ const DetailsCard = (props) => {
 
   return (
     <Grid item xs={12} sm={12} md={6}>
-    <List className={classes.root} style={{backgroundImage: "linear-gradient(#3b57ca,#55a8d4)"}} >
-      <ListItem>
-        <ListItemText primary="Wind" />
-      </ListItem>
-      <li>
-        <Typography
-          className={classes.dividerFullWidth}
-          color="textSecondary"
-          display="block"
-          variant="body2"
-        >
-            {props.Wind.Direction.English} {props.units ? metricWinds : imperialWinds} {props.units ? ' km/h' : ' mph'}
-        </Typography>
-      </li>
-      <Divider component="li" />
-      <ListItem>
-        <ListItemText primary="Humidity" />
-      </ListItem>
-      <li>
-        <Typography
-          className={classes.dividerFullWidth}
-          color="textSecondary"
-          display="block"
-          variant="body2"
-        >
-           {props.RelativeHumidity}% 
-        </Typography>
-      </li>
-      <Divider component="li" />
-      <ListItem>
-        <ListItemText primary="Dew Point" />
-      </ListItem>
-      <li>
+      <List
+        className={classes.root}
+        style={{ backgroundImage: "linear-gradient(#3b57ca,#55a8d4)" }}
+      >
+        <ListItem>
+          <ListItemText primary="Wind" />
+        </ListItem>
+        <li>
           <Typography
             className={classes.dividerFullWidth}
             color="textSecondary"
@@ -79,40 +54,67 @@ const DetailsCard = (props) => {
             {props.units ? metricWinds : imperialWinds}{' '}
             {props.units ? ' km/h' : ' mph'}
           </Typography>
-      </li>
-      <Divider component="li" />
-      <ListItem>
-        <ListItemText primary="Pressure" />
-      </ListItem>
-      <li>
-        <Typography
-          className={classes.dividerFullWidth}
-          color="textSecondary"
-          display="block"
-          variant="body2"
-        >
+        </li>
+        <Divider component="li" />
+        <ListItem>
+          <ListItemText primary="Humidity" />
+        </ListItem>
+        <li>
+          <Typography
+            className={classes.dividerFullWidth}
+            color="textSecondary"
+            display="block"
+            variant="body2"
+          >
+            {props.RelativeHumidity}%
+          </Typography>
+        </li>
+        <Divider component="li" />
+        <ListItem>
+          <ListItemText primary="Dew Point" />
+        </ListItem>
+        <li>
+          <Typography
+            className={classes.dividerFullWidth}
+            color="textSecondary"
+            display="block"
+            variant="body2"
+          >
+            {props.units ? metricDewPoint : imperialDewPoint}&deg;
+          </Typography>
+        </li>
+        <Divider component="li" />
+        <ListItem>
+          <ListItemText primary="Pressure" />
+        </ListItem>
+        <li>
+          <Typography
+            className={classes.dividerFullWidth}
+            color="textSecondary"
+            display="block"
+            variant="body2"
+          >
             {props.units ? metricPressure : imperialPressure}
-            {props.units ? ' mb' : ' in'}
-        </Typography>
-      </li>
-      <Divider component="li" />
-      <ListItem>
-        <ListItemText primary="Visibility" />
-      </ListItem>
-      <li>
-        <Typography
-          className={classes.dividerFullWidth}
-          color="textSecondary"
-          display="block"
-          variant="body2"
-          component="p"
-        >
+            {props.units ? " mb" : " in"}
+          </Typography>
+        </li>
+        <Divider component="li" />
+        <ListItem>
+          <ListItemText primary="Visibility" />
+        </ListItem>
+        <li>
+          <Typography
+            className={classes.dividerFullWidth}
+            color="textSecondary"
+            display="block"
+            variant="body2"
+            component="p"
+          >
             {props.units ? metricVisibility : imperialVisibility}
-            {props.units ? ' km' : ' mi'}
-        </Typography>
-      </li>
-      
-    </List>
+            {props.units ? " km" : " mi"}
+          </Typography>
+        </li>
+      </List>
     </Grid>
   );
 }
