@@ -69,14 +69,16 @@ const DetailsCard = (props) => {
         <ListItemText primary="Dew Point" />
       </ListItem>
       <li>
-        <Typography
-          className={classes.dividerFullWidth}
-          color="textSecondary"
-          display="block"
-          variant="body2"
-        >
-            {props.units ? metricDewPoint : imperialDewPoint}&deg;
-        </Typography>
+          <Typography
+            className={classes.dividerFullWidth}
+            color="textSecondary"
+            display="block"
+            variant="body2"
+          >
+            {props.Wind.Direction.English}{' '}
+            {props.units ? metricWinds : imperialWinds}{' '}
+            {props.units ? ' km/h' : ' mph'}
+          </Typography>
       </li>
       <Divider component="li" />
       <ListItem>
